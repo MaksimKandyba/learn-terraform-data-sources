@@ -6,17 +6,6 @@ provider "random" {}
 
 resource "random_pet" "name" {}
 
-#resource "fly_app" "exampleApp" {
-#  name = "kandyba-flyiac"
-#  org  = "personal"
-#}
-
-resource "fly_ip" "exampleIp" {
-  app  = "kandyba-flyiac"
-  type = "v4"
-  #depends_on = [fly_app.exampleApp]
-}
-
 resource "fly_machine" "web" {
   app    = "kandyba-flyiac"
   region = var.fly_region
@@ -53,4 +42,5 @@ resource "fly_machine" "web" {
       )
     )
   ]
+  #depends_on = [fly_app.exampleApp]
 }

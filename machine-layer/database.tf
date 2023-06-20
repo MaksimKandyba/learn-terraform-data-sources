@@ -1,8 +1,3 @@
-resource "fly_app" "databaseApp" {
-  name = "kandyba-mysql"
-  org  = "personal"
-}
-
 resource "fly_volume" "databaseVolume" {
   name       = "kandyba_mysql_volume"
   app        = "kandyba-mysql"

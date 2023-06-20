@@ -17,12 +17,6 @@ resource "fly_ip" "exampleIp" {
   #depends_on = [fly_app.exampleApp]
 }
 
-resource "fly_ip" "exampleIpv6" {
-  app  = "kandyba-flyiac"
-  type = "v6"
-  #depends_on = [fly_app.exampleApp]
-}
-
 resource "fly_machine" "web" {
   app    = "kandyba-flyiac"
   region = var.fly_region

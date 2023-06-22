@@ -43,3 +43,8 @@ output "lap_url" {
   description = "URL of Linux Apache PHP"
   value       = "https://${fly_machine.web.app}.fly.dev/"
 }
+
+output "db_deployed" {
+  description = "Whether MySQL database is deployed"
+  value       = data.terraform_remote_state.app_layer.outputs.db_deployed
+}

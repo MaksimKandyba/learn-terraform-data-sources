@@ -30,7 +30,7 @@ output "db_connect_string" {
   description = "MySQL database connection string"
   value = join(" ",
     [
-      "Server=${fly_app.databaseApp.name}.internal;",
+      "Server=${data.terraform_remote_state.app_layer.outputs.db_app_name}.internal;",
       "Database=${var.db_name};",
       "Uid=${var.db_username};",
       "Pwd=${var.db_password};"

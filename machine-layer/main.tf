@@ -44,3 +44,11 @@ resource "fly_machine" "web" {
   ]
   #depends_on = [fly_app.exampleApp]
 }
+
+data "terraform_remote_state" "app_layer" {
+  backend = "local"
+
+  config = {
+    path = "../app-layer/terraform.tfstate"
+  }
+}
